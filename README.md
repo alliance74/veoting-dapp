@@ -93,3 +93,7 @@ Solidity -> Hardhat -> ethers.js -> MetaMask
 
 ## MetaMask Setup
 Add network: RPC http://127.0.0.1:8545, ChainID 1337
+
+
+## Scripts
+- compile, test, node, deploy:local, deploy:sepolia

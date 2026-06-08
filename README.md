@@ -109,3 +109,7 @@ ethers.js v6 (CDN) for browser, ethers v5 for Hardhat tests
 
 ## Glossary
 DApp=Decentralized App, ABI=Application Binary Interface, IPFS=InterPlanetary File System
+
+
+## Security
+One vote per address per poll is enforced at the smart contract level.

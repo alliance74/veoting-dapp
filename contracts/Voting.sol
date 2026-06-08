@@ -161,3 +161,5 @@ contract Voting {
 // Error codes: PollNotFound=1, Expired=2, AlreadyVoted=3, InvalidOption=4
 
 // Validation order: question -> options length -> duration
+
+// Poll struct: id, creator, question, options[], votes[], deadline, exists

@@ -806,3 +806,5 @@ input::placeholder { color: var(--text-dim); }
 /* z-index layer: modal=200, toast=999, header=100 */
 
 /* Breakpoints: mobile<640px, tablet<1024px, desktop>=1140px */
+
+/* Font stack: Inter -> system-ui -> sans-serif */

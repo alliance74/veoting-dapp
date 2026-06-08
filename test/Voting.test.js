@@ -153,3 +153,5 @@ describe("Voting", function () {
     });
   });
 });
+
+// expectRevert: compatible with ethers v5 without chai-as-promised

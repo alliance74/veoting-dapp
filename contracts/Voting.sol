@@ -163,3 +163,5 @@ contract Voting {
 // Validation order: question -> options length -> duration
 
 // Poll struct: id, creator, question, options[], votes[], deadline, exists
+
+// Mappings: pollId->Poll, pollId->voter->hasVoted

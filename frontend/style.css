@@ -812,3 +812,5 @@ input::placeholder { color: var(--text-dim); }
 /* Use transform/opacity for GPU-accelerated animations */
 
 /* Glassmorphism: backdrop-filter blur + semi-transparent bg + border */
+
+/* Palette: bg=#06060f accent=#7c3aed teal=#06b6d4 pink=#ec4899 */

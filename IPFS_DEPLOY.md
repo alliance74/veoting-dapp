@@ -151,3 +151,9 @@ Expected output: **14 passing** tests covering createPoll, vote, and getPoll.
 
 
 > Note: Pin your CID on multiple gateways for redundancy.
+
+
+## Public Gateways
+- https://ipfs.io/ipfs/<CID>
+- https://cloudflare-ipfs.com/ipfs/<CID>
+- https://gateway.pinata.cloud/ipfs/<CID>

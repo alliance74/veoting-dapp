@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VoteChain — Decentralized Voting DApp</title>
+  <meta name="description" content="A fully decentralized on-chain voting application. Create polls, cast votes, and view results — all powered by the Ethereum blockchain." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated background -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ── Header ── -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⛓</span>
+        <span class="logo-text">VoteChain</span>
+      </div>
+
+      <div class="header-right">
+        <div class="network-badge" id="network-badge">
+          <span class="net-dot"></span>
+          <span id="network-name">Not connected</span>
+        </div>
+        <button class="btn btn-primary" id="connect-btn">
+          <span class="btn-icon">🦊</span>
+          <span id="connect-label">Connect Wallet</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">
+        <span>🗳️</span> On-Chain Voting
+      </div>
+      <h1 class="hero-title">
+        Vote Without<br />
+        <span class="gradient-text">Borders or Bias</span>
+      </h1>
+      <p class="hero-sub">Create trustless polls, cast your vote, and verify every result directly on the Ethereum blockchain — no central authority required.</p>
+
+      <div class="hero-stats" id="hero-stats">
+        <div class="stat">
+          <span class="stat-val" id="stat-polls">—</span>
+          <span class="stat-label">Total Polls</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-val" id="stat-wallet">Not connected</span>
+          <span class="stat-label">Your Wallet</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Main content ── -->
+  <main class="main">
+
+    <!-- ── Wallet warning ── -->
+    <div class="alert-card" id="wallet-alert">
+      <span class="alert-icon">🦊</span>
+      <div>
+        <strong>MetaMask Required</strong>
+        <p>Please install <a href="https://metamask.io" target="_blank" rel="noopener">MetaMask</a> and connect your wallet to interact with the DApp.</p>
+      </div>
+    </div>
+
+    <!-- ── Tabs ── -->
+    <div class="tabs" id="tabs" style="display:none">
+      <button class="tab active" id="tab-polls" data-target="section-polls">🗳️ All Polls</button>
+      <button class="tab" id="tab-create" data-target="section-create">✨ Create Poll</button>
+    </div>
+
+    <!-- ── ALL POLLS ── -->
+    <section class="tab-section" id="section-polls">
+      <div class="section-header">
+        <h2>Active &amp; Past Polls</h2>
+        <button class="btn btn-secondary btn-sm" id="refresh-btn">↻ Refresh</button>
+      </div>
+
+      <div id="polls-loading" class="loading-state" style="display:none">
+        <div class="spinner"></div>
+        <p>Loading polls from blockchain…</p>
+      </div>
+
+      <div id="polls-empty" class="empty-state" style="display:none">
+        <span>📭</span>
+        <p>No polls yet. Be the first to create one!</p>
+      </div>
+
+      <div class="polls-grid" id="polls-grid"></div>
+    </section>
+
+    <!-- ── CREATE POLL ── -->
+    <section class="tab-section hidden" id="section-create">
+      <div class="create-card glass-card">
+        <h2>Create a New Poll</h2>
+        <p class="section-sub">Your poll will be stored permanently on-chain.</p>
+
+        <form id="create-form" novalidate>
+          <div class="form-group">
+            <label for="poll-question">Poll Question <span class="req">*</span></label>
+            <input
+              type="text"
+              id="poll-question"
+              placeholder="What is your favourite blockchain?"
+              maxlength="200"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Options <span class="req">*</span> <span class="hint">(2–10)</span></label>
+            <div id="options-container">
+              <div class="option-row">
+                <input type="text" class="option-input" placeholder="Option A" />
+                <button type="button" class="remove-option" title="Remove" tabindex="-1">✕</button>
+              </div>
+              <div class="option-row">
+                <input type="text" class="option-input" placeholder="Option B" />
+                <button type="button" class="remove-option" title="Remove" tabindex="-1">✕</button>
+              </div>
+            </div>
+            <button type="button" class="btn btn-ghost btn-sm" id="add-option-btn">+ Add Option</button>
+          </div>
+
+          <div class="form-group">
+            <label for="poll-duration">Duration (minutes) <span class="req">*</span></label>
+            <div class="input-with-unit">
+              <input type="number" id="poll-duration" min="1" max="100000" value="60" required />
+              <span class="unit">min</span>
+            </div>
+            <p class="field-hint">60 min = 1 hour · 1440 min = 1 day</p>
+          </div>
+
+          <div id="create-error" class="form-error" style="display:none"></div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="create-btn">
+            <span id="create-btn-label">🚀 Deploy Poll on Chain</span>
+            <div class="btn-spinner" id="create-spinner" style="display:none"></div>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Poll Detail Modal ── -->
+  <div class="modal-overlay" id="modal-overlay" style="display:none" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal glass-card">
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <div id="modal-content"><!-- filled dynamically --></div>
+    </div>
+  </div>
+
+  <!-- ── Toast ── -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ethers.js v6 via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.2/ethers.umd.min.js"
+          integrity="sha512-UE8kB9LR4ZtRCCgEjaxmGaQhJwAl1EPL1JxdqmEvHVjvzXjNr4BNMW1kIq5l/+fzQUiISxFSwGJqmqJaR6Bw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="app.js"></script>
+</body>
+</html>

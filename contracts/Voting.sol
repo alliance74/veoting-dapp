@@ -153,3 +153,5 @@ contract Voting {
         return pollCount;
     }
 }
+
+// NatSpec: @title Voting DApp v1.0

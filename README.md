@@ -133,3 +133,7 @@ PollNotFound | PollExpired | AlreadyVoted | InvalidOption | InvalidInput
 - [x] Tests passing (16/16)
 - [x] Frontend hosted on IPFS
 - [x] MetaMask integration working
+
+
+---
+*VoteChain v1.0 - Built with Hardhat + Solidity + ethers.js*

@@ -101,3 +101,7 @@ Add network: RPC http://127.0.0.1:8545, ChainID 1337
 
 ## Local Deployment
 Default address: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+
+
+## Frontend Stack
+ethers.js v6 (CDN) for browser, ethers v5 for Hardhat tests

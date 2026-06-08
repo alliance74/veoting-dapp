@@ -159,3 +159,5 @@ contract Voting {
 // License: MIT - Open Source
 
 // Error codes: PollNotFound=1, Expired=2, AlreadyVoted=3, InvalidOption=4
+
+// Validation order: question -> options length -> duration

@@ -113,3 +113,7 @@ DApp=Decentralized App, ABI=Application Binary Interface, IPFS=InterPlanetary Fi
 
 ## Security
 One vote per address per poll is enforced at the smart contract level.
+
+
+## Poll Duration Examples
+1 hour=60min, 1 day=1440min, 1 week=10080min

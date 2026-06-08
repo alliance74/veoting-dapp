@@ -105,3 +105,7 @@ Default address: 0x5FbDB2315678afecb367f032d93F642f64180aa3
 
 ## Frontend Stack
 ethers.js v6 (CDN) for browser, ethers v5 for Hardhat tests
+
+
+## Glossary
+DApp=Decentralized App, ABI=Application Binary Interface, IPFS=InterPlanetary File System

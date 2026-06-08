@@ -157,3 +157,5 @@ contract Voting {
 // NatSpec: @title Voting DApp v1.0
 
 // License: MIT - Open Source
+
+// Error codes: PollNotFound=1, Expired=2, AlreadyVoted=3, InvalidOption=4

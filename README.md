@@ -126,3 +126,10 @@ One vote per address per poll is enforced at the smart contract level.
 
 ## Custom Errors
 PollNotFound | PollExpired | AlreadyVoted | InvalidOption | InvalidInput
+
+
+## Submission Checklist
+- [x] Smart contract deployed
+- [x] Tests passing (16/16)
+- [x] Frontend hosted on IPFS
+- [x] MetaMask integration working

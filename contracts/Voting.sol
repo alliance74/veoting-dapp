@@ -155,3 +155,5 @@ contract Voting {
 }
 
 // NatSpec: @title Voting DApp v1.0
+
+// License: MIT - Open Source

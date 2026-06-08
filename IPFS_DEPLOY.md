@@ -148,3 +148,6 @@ Expected output: **14 passing** tests covering createPoll, vote, and getPoll.
 
 
 > Tip: Use Alchemy free tier for Sepolia RPC endpoint.
+
+
+> Note: Pin your CID on multiple gateways for redundancy.

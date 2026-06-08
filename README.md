@@ -85,3 +85,7 @@ dapp/
 - ethers.js v6
 - Vanilla HTML/CSS/JS
 - IPFS / Pinata
+
+
+## Architecture
+Solidity -> Hardhat -> ethers.js -> MetaMask

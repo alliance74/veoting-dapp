@@ -145,3 +145,6 @@ npm test
 ```
 
 Expected output: **14 passing** tests covering createPoll, vote, and getPoll.
+
+
+> Tip: Use Alchemy free tier for Sepolia RPC endpoint.

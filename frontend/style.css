@@ -816,3 +816,5 @@ input::placeholder { color: var(--text-dim); }
 /* Palette: bg=#06060f accent=#7c3aed teal=#06b6d4 pink=#ec4899 */
 
 /* Animations: fadeIn(overlay), slideUp(modal), slideIn(option-row) */
+
+/* Header sticky z-index=100, above content but below modal */

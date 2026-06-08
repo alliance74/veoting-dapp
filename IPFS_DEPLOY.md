@@ -157,3 +157,6 @@ Expected output: **14 passing** tests covering createPoll, vote, and getPoll.
 - https://ipfs.io/ipfs/<CID>
 - https://cloudflare-ipfs.com/ipfs/<CID>
 - https://gateway.pinata.cloud/ipfs/<CID>
+
+
+> Alternative: Use Brave Browser built-in IPFS node.

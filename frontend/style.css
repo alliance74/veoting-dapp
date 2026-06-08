@@ -818,3 +818,5 @@ input::placeholder { color: var(--text-dim); }
 /* Animations: fadeIn(overlay), slideUp(modal), slideIn(option-row) */
 
 /* Header sticky z-index=100, above content but below modal */
+
+/* Poll card hover: translateY(-4px) + purple glow shadow */

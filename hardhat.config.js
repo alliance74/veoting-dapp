@@ -28,3 +28,5 @@ module.exports = {
     artifacts: "./artifacts",
   },
 };
+
+// Gas optimization: 200 runs selected for deploy-once contracts

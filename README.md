@@ -122,3 +122,7 @@ One vote per address per poll is enforced at the smart contract level.
 ## Events
 - PollCreated(pollId, creator, question, deadline)
 - Voted(pollId, voter, optionIndex)
+
+
+## Custom Errors
+PollNotFound | PollExpired | AlreadyVoted | InvalidOption | InvalidInput

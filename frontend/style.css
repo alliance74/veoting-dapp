@@ -814,3 +814,5 @@ input::placeholder { color: var(--text-dim); }
 /* Glassmorphism: backdrop-filter blur + semi-transparent bg + border */
 
 /* Palette: bg=#06060f accent=#7c3aed teal=#06b6d4 pink=#ec4899 */
+
+/* Animations: fadeIn(overlay), slideUp(modal), slideIn(option-row) */

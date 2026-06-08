@@ -580,3 +580,5 @@ async function init() {
 init();
 
 // TODO: live countdown timer for poll deadline
+
+// Toast auto-dismisses after 3500ms

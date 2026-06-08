@@ -810,3 +810,5 @@ input::placeholder { color: var(--text-dim); }
 /* Font stack: Inter -> system-ui -> sans-serif */
 
 /* Use transform/opacity for GPU-accelerated animations */
+
+/* Glassmorphism: backdrop-filter blur + semi-transparent bg + border */
